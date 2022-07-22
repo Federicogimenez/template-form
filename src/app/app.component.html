@@ -3,7 +3,7 @@
   <div class="formulario">
     <form (ngSubmit)="onSubmit()" #loginFormBig="ngForm">
       <div class="form__item">
-        <label class="form__label">Email address</label>
+        <label class="form__label">Email adress</label>
         <input type="email" email class="form__input" [(ngModel)]="login.email" name="email" #email="ngModel" required>
         <div [hidden]="email.valid || email.pristine" class="form__item--aclaration">
           Ingresá un mail valido
@@ -13,7 +13,7 @@
         <label class="form__label">Adress</label>
         <input type="text" class="form__input" [(ngModel)]="login.adress" name="adress"
           #adress="ngModel" required>
-        <div [hidden]="!adress.dirty" class="form__item--aclaration">
+        <div [hidden]="adress.untouched" class="form__item--aclaration">
           Debes indicar tu domicilio
         </div>
       </div>
@@ -49,7 +49,7 @@
           La contraseña y repetir contraseña deben ser iguales
         </div>
       </div>
-      <button type="submit" [disabled]="loginFormBig.invalid && (repassword.value != password.value)" class="form__btn">Submit</button>
+      <button type="submit" [disabled]="loginFormBig.invalid || (repassword.value != password.value)" class="form__btn">Submit</button>
       <div [hidden]="loginFormBig.dirty">
         <p>Completá los campos y envia el formulario para ver los datos enviados</p>
       </div>

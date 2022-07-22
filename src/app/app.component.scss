@@ -43,12 +43,13 @@
         padding: 5px;
         background-color: #ccc;
         border: none;
+        width: 100%;
         &:focus{
             outline-color: rgb(31, 92, 146);
         }
     }
     &__btn{
-        width: 80%;
+        width: 100%;
         margin: 0 auto;
         margin-bottom: 10px;
         padding: 10px;
